@@ -1,0 +1,45 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-product" >
+  <h2 class="form-product-title">Formulario de producto</h2>
+  <div class="inputs-container">
+    <p-inputgroup>
+      <p-inputgroup-addon>
+        <i class="pi pi-barcode"></i>
+      </p-inputgroup-addon>
+      <input pInputText formControlName="name" placeholder="Producto" />
+    </p-inputgroup>
+
+    <p-inputgroup>
+      <p-inputgroup-addon>€</p-inputgroup-addon>
+      <p-inputnumber formControlName="price" mode="currency" currency="EUR" placeholder="Precio" />
+    </p-inputgroup>
+
+    <p-inputgroup>
+      <p-inputgroup-addon>
+        <i class="pi pi-book"></i>
+      </p-inputgroup-addon>
+      <input pInputText formControlName="description" placeholder="Descripcion" />
+    </p-inputgroup>
+
+    <p-inputgroup>
+      <p-inputgroup-addon>
+        <i class="pi pi-warehouse"></i>
+      </p-inputgroup-addon>
+      <p-inputnumber formControlName="stock" placeholder="Stock" />
+    </p-inputgroup>
+  </div>
+  <div class="btn-container">
+    <button pButton type="submit"
+      class="p-button-primary p-mr-2"
+      [label]="selectedProduct ? 'Actualizar' : 'Crear'"
+      [icon]="selectedProduct ? 'pi pi-pencil' : 'pi pi-plus'"
+      [raised]="true"
+      [disabled]="form.invalid">
+    </button>
+    <button pButton type="button"
+      class="p-button-secondary p-mr-2"
+      label="Cancelar"
+      [raised]="true"
+      (click)="onCancel()">
+    </button>
+  </div>
+</form>

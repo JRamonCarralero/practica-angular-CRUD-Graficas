@@ -30,8 +30,8 @@
   <div class="btn-container">
     <button pButton type="submit"
       class="p-button-primary p-mr-2"
-      [label]="selectedProduct ? 'Actualizar' : 'Crear'"
-      [icon]="selectedProduct ? 'pi pi-pencil' : 'pi pi-plus'"
+      [label]="form.get('id')!.value ? 'Actualizar' : 'Crear'"
+      [icon]="form.get('id')!.value ? 'pi pi-pencil' : 'pi pi-plus'"
       [raised]="true"
       [disabled]="form.invalid">
     </button>

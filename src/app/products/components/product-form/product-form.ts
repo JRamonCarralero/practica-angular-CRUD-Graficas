@@ -25,7 +25,7 @@ export class ProductForm implements OnChanges {
   @Output() cancel = new EventEmitter<void>();
 
   form = new FormGroup({
-    id: new FormControl<Number | null>(null),
+    id: new FormControl<string | null>(null),
     name: new FormControl<string>('', Validators.required),
     price: new FormControl<number>(0, [Validators.required, Validators.min(0)]),
     description: new FormControl<string>('', Validators.required),
@@ -43,7 +43,7 @@ export class ProductForm implements OnChanges {
   onSubmit() {
     if (this.form.invalid) return;
 
-    const id = this.form.get('id')?.value as number | null;
+    const id = this.form.get('id')?.value as string | null;
     const name = this.form.get('name')?.value as string;
     const price = this.form.get('price')?.value as number;
     const description = this.form.get('description')?.value as string;

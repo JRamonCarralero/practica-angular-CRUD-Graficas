@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { ProductForm } from "./products/components/product-form/product-form";
+import { ProductList } from './products/components/product-list/product-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ButtonModule, ProductForm],
+  imports: [RouterOutlet, ButtonModule, ProductList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

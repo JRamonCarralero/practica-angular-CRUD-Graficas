@@ -28,7 +28,7 @@ export class Doughnut implements OnInit {
       const textColor = documentStyle.getPropertyValue('--p-text-color');
 
       this.data = {
-        labels: ['A', 'B', 'C'],
+        labels: ['Ferreteria', 'Baño', 'Cocina'],
         datasets: [
           {
             data: [300, 50, 100],

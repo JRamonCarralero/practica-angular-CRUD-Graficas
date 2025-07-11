@@ -31,7 +31,7 @@ export class PolarArea implements OnInit {
       this.data = {
         datasets: [
           {
-            data: [11, 16, 7, 3, 14],
+            data: [11, 16, 14, 8, 3],
             backgroundColor: [
               documentStyle.getPropertyValue('--p-pink-500'),
               documentStyle.getPropertyValue('--p-gray-500'),
@@ -39,10 +39,10 @@ export class PolarArea implements OnInit {
               documentStyle.getPropertyValue('--p-purple-500'),
               documentStyle.getPropertyValue('--p-cyan-500')
             ],
-            label: 'My dataset'
+            label: 'Ventas anuales'
           }
         ],
-        labels: ['Pink', 'Gray', 'Orange', 'Purple', 'Cyan']
+        labels: ['2025', '2024', '2023', '2022', '2021']
       };
 
       this.options = {

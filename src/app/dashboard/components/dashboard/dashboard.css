@@ -1,0 +1,42 @@
+.main-dashboard {
+  width: 90%;
+  min-width: 450px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px;
+  color: rgb(65, 65, 255);
+}
+
+.dashboard-container {
+  width: 90%;
+  min-width: 450px;
+  max-width: 1200px;
+  margin: 10px auto;
+  text-align: center;
+  padding: 15px;
+}
+
+.hb-container {
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+  padding: 15px;
+}
+
+.circle-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+  padding: 15px;
+}
+
+.cc-cont {
+  width: 400px;
+  margin: 10px auto;
+  text-align: center;
+  padding: 15px;
+}

@@ -1,0 +1,29 @@
+<div class="main-title">
+  <h1>Dashboard</h1>
+</div>
+
+<div class="main-dashboard">
+  @defer {
+    <div class="dashboard-container">
+      <div class="hb-container">
+        <app-horizontal-bar></app-horizontal-bar>
+      </div>
+      <div class="circle-container">
+        <div class="cc-cont">
+          <app-doughnut></app-doughnut>
+        </div>
+        <div class="cc-cont">
+          <app-polar-area></app-polar-area>
+        </div>
+      </div>
+    </div>
+  } @placeholder (minimum 2s) {
+    <h2>Cargando gráficas...</h2>
+    <i class="pi pi-spin pi-cog" style="font-size: 2rem"></i>
+  } @loading (minimum 2s; after 500ms) {
+    <h2>Cargando gráficas... Por favor disculpen las molestias</h2>
+    <i class="pi pi-spin pi-cog" style="font-size: 2rem"></i>
+  } @error {
+    <p>Error al cargar los gráficos</p>
+  }
+</div>

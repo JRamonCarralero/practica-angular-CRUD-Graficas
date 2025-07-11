@@ -31,8 +31,8 @@
         <td>{{ product.stock }}</td>
         <td>
           <div class="btn-table">
-            <button pButton type="button" [icon]="'pi pi-pencil'" class="p-button-warning" (click)="onEdit(product)"></button>
-            <button pButton type="button" [icon]="'pi pi-trash'" class="p-button-danger" (click)="onDelete(product.id)"></button>
+            <button pButton type="button" [icon]="'pi pi-pencil'" class="p-button-warning p-button-text" (click)="onEdit(product)"></button>
+            <button pButton type="button" [icon]="'pi pi-trash'" class="p-button-danger p-button-text" (click)="onDelete(product.id)"></button>
           </div>
         </td>
       </tr>

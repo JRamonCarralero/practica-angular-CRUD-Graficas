@@ -8,6 +8,7 @@ import { ProductService } from '../../services/product-service';
 
 @Component({
   selector: 'app-product-list',
+  standalone: true,
   imports: [CommonModule, TableModule, ButtonModule, ProductForm],
   templateUrl: './product-list.html',
   styleUrl: './product-list.css'

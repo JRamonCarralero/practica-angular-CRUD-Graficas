@@ -1,0 +1,30 @@
+.navbar {
+  width: 100%;
+  overflow: auto;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 12px 30px;
+  list-style: none;
+}
+
+.nav-item {
+  font-size: 1.2em;
+}
+
+.nav-link {
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(65, 65, 255);
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+
+  &:hover {
+    color: rgb(255, 65, 65);
+  }
+}

@@ -7,16 +7,6 @@
   padding: 15px;
 }
 
-.main-title {
-  margin-bottom: 10px;
-  font-size: 1.5em;
-  text-align: center;
-  background-color: rgb(65, 65, 255);
-  padding: 10px;
-  border-radius: 15px;
-  color: #fff;
-}
-
 .btn-table {
   display: flex;
   justify-content: space-around;

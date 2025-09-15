@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
-import { ChangeDetectorRef, Component, effect, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { ChartModule } from 'primeng/chart';
+import { DataService } from './defer-service';
 
 @Component({
   selector: 'app-horizontal-bar',
@@ -11,15 +12,40 @@ import { ChartModule } from 'primeng/chart';
 })
 export class HorizontalBar implements OnInit {
   data: any;
+  newData = signal<any | undefined>(undefined);
+  deferData = signal<any | undefined>(undefined);
 
   options: any;
 
   platformId = inject(PLATFORM_ID);
 
-  constructor(private cd: ChangeDetectorRef) {}
+
+
+  constructor(private cd: ChangeDetectorRef, private dataService: DataService) {}
 
   ngOnInit() {
-    this.initChart();
+    this.dataService.getDataWithDelay().then(response => {
+      this.deferData.set(response);
+      this.initChart();
+      const documentStyle = getComputedStyle(document.documentElement);
+      this.newData.set({
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'],
+        datasets: [
+          {
+            label: 'Productos de interior',
+            backgroundColor: documentStyle.getPropertyValue('--p-cyan-500'),
+            borderColor: documentStyle.getPropertyValue('--p-cyan-500'),
+            data: [65, 59, 80, 81, 56, 55, 40]
+          },
+          {
+            label: 'Productos de exterior',
+            backgroundColor: documentStyle.getPropertyValue('--p-gray-500'),
+            borderColor: documentStyle.getPropertyValue('--p-gray-500'),
+            data: [28, 48, 40, 19, 86, 77, 90]
+          }
+        ]
+      });
+    });
   }
 
   initChart() {

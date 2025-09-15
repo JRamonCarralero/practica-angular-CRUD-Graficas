@@ -1,0 +1,18 @@
+<div class="card flex justify-center">
+  <h3>Facturación de ventas por año</h3>
+  @defer (when data() && options()) {
+    <p-chart type="polarArea" [data]="data()" [options]="options()" class="w-full md:w-[30rem]" />
+  } @placeholder {
+    <div>
+      <h2>Cargando gráficas...</h2>
+      <i class="pi pi-spin pi-cog" style="font-size: 2rem; color: red"></i>
+    </div>
+  } @loading (after 2s) {
+    <div>
+      <h2>Cargando gráficas... Por favor disculpen las molestias</h2>
+      <i class="pi pi-spin pi-cog" style="font-size: 2rem"></i>
+    </div>
+  } @error {
+    <p>Error al cargar los gráficos</p>
+  }
+</div>

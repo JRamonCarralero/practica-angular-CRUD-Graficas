@@ -3,7 +3,7 @@
 </div>
 
 <div class="main-dashboard">
-  @defer {
+  <!-- @defer { -->
     <div class="dashboard-container">
       <div class="hb-container">
         <app-horizontal-bar></app-horizontal-bar>
@@ -16,8 +16,11 @@
           <app-polar-area></app-polar-area>
         </div>
       </div>
+      <div class="hb-container">
+        <app-defer-chart></app-defer-chart>
+      </div>
     </div>
-  } @placeholder (minimum 2s) {
+  <!-- } @placeholder {
     <h2>Cargando gráficas...</h2>
     <i class="pi pi-spin pi-cog" style="font-size: 2rem"></i>
   } @loading (minimum 2s; after 500ms) {
@@ -25,5 +28,5 @@
     <i class="pi pi-spin pi-cog" style="font-size: 2rem"></i>
   } @error {
     <p>Error al cargar los gráficos</p>
-  }
+  } -->
 </div>
